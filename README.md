@@ -1,50 +1,47 @@
-# Welcome to your Expo app 👋
+# 🚀 StickerSmash – L’application Expo du futur
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Bienvenue dans StickerSmash, une application mobile universelle propulsée par [Expo](https://expo.dev) et pensée pour l’avenir du développement multiplateforme.
 
-## Get started
+## ⚡ Démarrage rapide
 
-1. Install dependencies
-
+1. Installe les dépendances :
    ```bash
-   npm install
+   yarn install
    ```
 
-2. Start the app
-
+2. Lance l’application en mode développement :
    ```bash
-   npx expo start
+   yarn start
    ```
 
-In the output, you'll find options to open the app in a
+3. Scanne le QR code avec ton appareil ou utilise un émulateur/simulateur pour explorer l’app sur Android, iOS ou le web.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🧭 Fonctionnalités
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Navigation à onglets moderne grâce à [expo-router](https://docs.expo.dev/router/introduction/)
+- Architecture modulaire et évolutive
+- Prêt pour l’intégration d’IA, de notifications et de fonctionnalités temps réel
+- Compatible avec les dernières versions d’Expo, React Native et TypeScript
 
-## Get a fresh project
+## 🛠️ Scripts utiles
 
-When you're ready, run:
+- `yarn start` – Démarre le serveur Expo
+- `yarn android` – Lance l’app sur un émulateur Android
+- `yarn ios` – Lance l’app sur un simulateur iOS
+- `yarn web` – Lance l’app dans le navigateur
+- `yarn reset-project` – Réinitialise le projet pour un nouveau départ
 
-```bash
-npm run reset-project
-```
+## 🌐 Ressources
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- [Documentation Expo](https://docs.expo.dev/)
+- [Tutoriel Expo interactif](https://docs.expo.dev/tutorial/introduction/)
+- [Communauté Discord Expo](https://chat.expo.dev)
+- [Expo sur GitHub](https://github.com/expo/expo)
 
-## Learn more
+## 🤝 Contribution
 
-To learn more about developing your project with Expo, look at the following resources:
+Les contributions sont les bienvenues ! Forke le repo, crée une branche et propose tes idées pour façonner l’app du futur.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Prêt à révolutionner le développement mobile ? 🚀

@@ -1,9 +1,14 @@
 import { Text, View, StyleSheet } from 'react-native';
+import { useTheme } from '../../theme/ThemeContext';
+import { lightTheme, darkTheme } from '../../theme/colors';
 
 export default function AboutScreen() {
+  const { theme } = useTheme();
+  const colors = theme === 'dark' ? darkTheme : lightTheme;
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>About screen</Text>
+    <View style={[styles.container, { backgroundColor: colors.background }]}> 
+      <Text style={[styles.text, { color: colors.text }]}>About screen</Text>
     </View>
   );
 }
@@ -11,11 +16,10 @@ export default function AboutScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#25292e',
     justifyContent: 'center',
     alignItems: 'center',
   },
   text: {
-    color: '#fff',
+    fontSize: 20,
   },
 });
