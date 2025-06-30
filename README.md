@@ -5,11 +5,13 @@ Bienvenue dans StickerSmash, une application mobile universelle propulsée par [
 ## ⚡ Démarrage rapide
 
 1. Installe les dépendances :
+
    ```bash
    yarn install
    ```
 
 2. Lance l’application en mode développement :
+
    ```bash
    yarn start
    ```

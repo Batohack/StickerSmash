@@ -1,32 +1,73 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, TouchableOpacityProps } from 'react-native';
+
+import { Animated, Easing, StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle } from 'react-native';
 import { useTheme } from '../theme/ThemeContext';
-import { lightTheme, darkTheme } from '../theme/colors';
 
-interface ButtonProps extends TouchableOpacityProps {
+type ButtonProps = {
   title: string;
-}
+  onPress: () => void;
+  style?: ViewStyle;
+  textStyle?: TextStyle;
+  disabled?: boolean;
+};
 
-export default function Button({ title, ...props }: ButtonProps) {
+export const Button: React.FC<ButtonProps> = ({ title, onPress, style, textStyle, disabled }) => {
   const { theme } = useTheme();
-  const colors = theme === 'dark' ? darkTheme : lightTheme;
+  const scale = React.useRef(new Animated.Value(1)).current;
+
+  const handlePress = () => {
+    Animated.sequence([
+      Animated.timing(scale, {
+        toValue: 1.13,
+        duration: 120,
+        useNativeDriver: true,
+        easing: Easing.out(Easing.ease),
+      }),
+      Animated.timing(scale, {
+        toValue: 1,
+        duration: 120,
+        useNativeDriver: true,
+        easing: Easing.in(Easing.ease),
+      }),
+    ]).start(() => onPress && onPress());
+  };
 
   return (
-    <TouchableOpacity style={[styles.button, { backgroundColor: colors.button }]} {...props}>
-      <Text style={[styles.text, { color: colors.buttonText }]}>{title}</Text>
-    </TouchableOpacity>
+    <Animated.View style={[{ transform: [{ scale }] }, style]}>
+      <TouchableOpacity
+        style={[
+          styles.button,
+          {
+            backgroundColor: 'transparent',
+            borderColor: 'transparent',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderRadius: 999,
+            paddingVertical: 8,
+            paddingHorizontal: 16,
+          },
+          disabled && { opacity: 0.5 },
+        ]}
+        onPress={handlePress}
+        disabled={disabled}
+        activeOpacity={0.7}
+        accessibilityRole="button"
+        accessibilityState={{ disabled }}
+      >
+        <Text style={[styles.text, { color: theme.buttonText, fontSize: 18, fontWeight: 'bold' }, textStyle]}>{title}</Text>
+      </TouchableOpacity>
+    </Animated.View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   button: {
-    padding: 12,
-    borderRadius: 8,
     alignItems: 'center',
     marginVertical: 8,
+    // le style du bouton est maintenant géré dans le composant pour le rendre rond et sans fond
   },
   text: {
-    fontWeight: 'bold',
     fontSize: 16,
+    fontWeight: 'bold',
   },
 });
