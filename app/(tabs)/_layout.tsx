@@ -48,6 +48,7 @@ export default function TabLayout() {
         },
       })}
     >
+      {/* Accueil */}
       <Tabs.Screen
         name="index"
         options={{
@@ -57,15 +58,7 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="auth"
-        options={{
-          title: 'Auth',
-          tabBarIcon: ({ color, focused }: { color: string; focused: boolean }) => (
-            <Ionicons name={focused ? 'log-in' : 'log-in-outline'} color={color} size={26} />
-          ),
-        }}
-      />
+      {/* Profil (inclut Auth) */}
       <Tabs.Screen
         name="profile"
         options={{
@@ -75,25 +68,7 @@ export default function TabLayout() {
           ),
         }}
       />
-      
-      <Tabs.Screen
-        name="gamification"
-        options={{
-          title: 'Jeux',
-          tabBarIcon: ({ color, focused }: { color: string; focused: boolean }) => (
-            <Ionicons name={focused ? 'trophy' : 'trophy-outline'} color={color} size={26} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="community"
-        options={{
-          title: 'Groupes',
-          tabBarIcon: ({ color, focused }: { color: string; focused: boolean }) => (
-            <Ionicons name={focused ? 'people' : 'people-outline'} color={color} size={26} />
-          ),
-        }}
-      />
+      {/* Dictionnaire & Leçons combinés */}
       <Tabs.Screen
         name="dictionary"
         options={{
@@ -103,25 +78,7 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="lessons"
-        options={{
-          title: 'Leçons',
-          tabBarIcon: ({ color, focused }: { color: string; focused: boolean }) => (
-            <Ionicons name={focused ? 'school' : 'school-outline'} color={color} size={26} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="culture"
-        options={{
-          title: 'Culture',
-          tabBarIcon: ({ color, focused }: { color: string; focused: boolean }) => (
-            <Ionicons name={focused ? 'musical-notes' : 'musical-notes-outline'} color={color} size={26} />
-          ),
-        }}
-      />
-      {/* Onglet À propos retiré du menu principal, accessible via Paramètres */}
+      {/* Paramètres */}
       <Tabs.Screen
         name="settings"
         options={{
